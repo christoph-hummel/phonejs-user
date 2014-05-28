@@ -1,0 +1,39 @@
+﻿<div data-options="dxView : { name: 'addUser', title: '@newUser' } " >
+	<div data-bind="dxCommand: { title: 'Create', id: 'create', icon: 'save', action: addUser}"></div>
+	<div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
+		<div class="content" data-bind="dxScrollView: { }">
+			<div class="dx-fieldset">
+				<div class="dx-field">
+					<div class="dx-field-label">@text:</div>
+					<div class="dx-field-value">
+						<div id="txtInputText" data-bind="dxTextBox: { value: inputName, placeholder: '@text' }"></div>
+					</div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">@number</div>
+					<div class="dx-field-value">
+						<div id="numbInputAmount" data-bind="dxTextBox: { value: inputNumber, mode: 'number', placeholder: '@number' }"></div>
+					</div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">@gender</div>
+					<div class="dx-field-value">
+						<div id="selectCurrency" class="dx-field-value" data-bind="dxSelectBox: {
+							dataSource: genderSource,
+							displayExpr: 'description',
+							valueExpr: 'description',
+							value: gender
+							}">
+						</div>
+					</div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">@birthday</div>
+					<div class="dx-field-value">
+						<div id="dateInputDate" data-bind="dxDateBox: { value: inputBirthday, format: 'date', placeholder: date_placeholder }"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
