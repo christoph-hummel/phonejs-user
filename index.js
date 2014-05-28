@@ -14,6 +14,16 @@ $(function () {
 			key : "id",
 			immediate : true
 		});
+	MyApp.localStoreSizeOfShoe = new DevExpress.data.LocalStore({
+			name : "sizeOfShoe",
+			key : "id",
+			immediate : true
+		});
+	MyApp.localStoreFinger = new DevExpress.data.LocalStore({
+			name : "finger",
+			key : "id",
+			immediate : true
+		});
 
 	MyApp.app = new DevExpress.framework.html.HtmlApplication({
 			namespace : MyApp,

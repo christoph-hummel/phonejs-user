@@ -19,15 +19,22 @@
 		actionSheetData: [
 			{text: Globalize.localize("delete"), clickAction: removeUser, type: "danger"}
 		],
-		// create DataSource
 		genderSource : new DevExpress.data.DataSource({
-			store : MyApp.localStoreGender
-		}),
+				store : MyApp.localStoreGender
+			}),
+		sizeOfShoeSource : new DevExpress.data.DataSource({
+				store : MyApp.localStoreSizeOfShoe
+			}),
+		fingerSource : new DevExpress.data.DataSource({
+				store : MyApp.localStoreFinger
+			}),
 
 		// create value variables
 		inputName: ko.observable(getUserById(params.id).name),
 		inputNumber: ko.observable(getUserById(params.id).number),
 		gender: ko.observable(getUserById(params.id).gender),
+		finger : ko.observable(getUserById(params.id).finger),
+		sizeOfShoe: ko.observable(getUserById(params.id).sizeOfShoe),
 		inputBirthday: ko.observable(Globalize.format(new Date(getUserById(params.id).birthday), 'yyyy-MM-dd')),
 		date_placeholder : ko.observable(Globalize.format(new Date(), 'yyyy-MM-dd')),
 		
@@ -55,6 +62,8 @@
 					number : viewModel.inputNumber(),
 					birthday : viewModel.inputBirthday(),
 					gender : viewModel.gender(),
+					finger : viewModel.finger(),
+					sizeOfShoe : viewModel.sizeOfShoe(),
 				}).done(function () {
 					MyApp.app.navigate('index', {
 						direction : 'backward',

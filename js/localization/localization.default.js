@@ -7,6 +7,8 @@ Globalize.addCultureInfo("default", {
 		"user": "User",
 		"birthday": "Birthday",
 		"gender": "Gender",
+		"sizeOfShoe": "Size Of Shoe",
+		"fingers": "Fingers",
 		"delete": "Delete",
 		"deleteUser" : "Delete User",
 		"nameIsRequired": "Name is required",

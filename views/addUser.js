@@ -6,6 +6,12 @@
 		genderSource : new DevExpress.data.DataSource({
 				store : MyApp.localStoreGender
 			}),
+		sizeOfShoeSource : new DevExpress.data.DataSource({
+				store : MyApp.localStoreSizeOfShoe
+			}),
+		fingerSource : new DevExpress.data.DataSource({
+				store : MyApp.localStoreFinger
+			}),
 
 		// create value variables
 		inputName : ko.observable(),
@@ -13,6 +19,8 @@
 		inputBirthday : ko.observable(),
 		date_placeholder : ko.observable(Globalize.format(new Date(), 'yyyy-MM-dd')),
 		gender : ko.observable(""),
+		finger : ko.observable(""),
+		sizeOfShoe: ko.observable(""),
 
 		addUser : function () {
 			var error = 0;
@@ -38,6 +46,8 @@
 					number : viewModel.inputNumber(),
 					birthday : viewModel.inputBirthday(),
 					gender : viewModel.gender(),
+					sizeOfShoe : viewModel.sizeOfShoe(),
+					finger : viewModel.finger(),
 				}).done(function () {
 					MyApp.app.navigate('index', {
 						direction : 'backward',
